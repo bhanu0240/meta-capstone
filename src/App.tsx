@@ -4,7 +4,6 @@ import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
 import UnderConstruction from "./components/pages/UnderConstruction";
 import pages from "./utils/pages.ts";
-import "./App.css";
 
 function App() {
   return (
