@@ -2,36 +2,40 @@ import { useState, useRef } from "react";
 import "./App.css";
 
 function App() {
-  const inputRef = useRef(null);
-  const resultRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const resultRef = useRef<HTMLParagraphElement>(null);
   const [result, setResult] = useState(0);
 
   function plus(e: React.MouseEvent) {
     e.preventDefault();
-    setResult((result) => result + Number(inputRef.current.value));
+    if (inputRef.current) {
+      setResult((result) => result + Number(inputRef.current?.value));
+    }
   }
 
   function minus(e: React.MouseEvent) {
     e.preventDefault();
-    setResult((result) => result - Number(inputRef.current.value));
+    setResult((result) => result - Number(inputRef.current?.value ?? 0));
     // Add the code for the minus function
   }
 
   function times(e: React.MouseEvent) {
     e.preventDefault();
-    setResult((result) => result * Number(inputRef.current.value));
+    setResult((result) => result * Number(inputRef.current?.value ?? 0));
     // Add the code for the plus function
   }
 
   function divide(e: React.MouseEvent) {
     e.preventDefault();
-    setResult((result) => result / Number(inputRef.current.value));
+    setResult((result) => result / Number(inputRef.current?.value ?? 1));
     // Add the code for the divide function
   }
 
   function resetInput(e: React.MouseEvent) {
     e.preventDefault();
-    inputRef.current.value = 0;
+    if (inputRef.current) {
+      inputRef.current.value = "0";
+    }
     // Add the code for the resetInput function
   }
 
