@@ -3,7 +3,7 @@ import Layout from "./components/layout/Layout.tsx";
 import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
 import UnderConstruction from "./components/pages/UnderConstruction";
-import Bookings from "./components/pages/Bookings/index.ts";
+import Bookings from "./components/pages/Bookings/index.tsx";
 import pages from "./utils/pages.ts";
 
 function App() {

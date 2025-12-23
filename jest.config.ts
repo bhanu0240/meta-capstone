@@ -13,6 +13,8 @@ const config: Config = {
       "<rootDir>/node_modules/@testing-library/user-event",
     "^react-router-dom$": "<rootDir>/node_modules/react-router-dom",
     "^.+\\.(css|scss)$": "identity-obj-proxy",
+    "^.+\\.(webmanifest|svg|png|jpg|jpeg|gif|ico|bmp|json)$":
+      "<rootDir>/__mocks__/fileMock.js",
   },
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
