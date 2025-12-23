@@ -3,7 +3,11 @@ import restaurantFoodImage from "./assets/restaurant-food.jpg";
 import "./Hero.css";
 import pages from "../../../utils/pages";
 
-const Hero = () => {
+import React from "react";
+
+interface HeroProps {}
+
+const Hero: React.FC<HeroProps> = () => {
   return (
     <section className="hero">
       <div className="container grid">

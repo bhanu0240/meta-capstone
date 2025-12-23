@@ -1,7 +1,11 @@
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ConfirmedBooking = () => {
+import React from "react";
+
+interface ConfirmedBookingProps {}
+
+const ConfirmedBooking: React.FC<ConfirmedBookingProps> = () => {
   return (
     <div className="container confirmed-booking">
       <FontAwesomeIcon icon={faCircleCheck} size="3x" />
