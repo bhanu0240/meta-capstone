@@ -1,24 +1,24 @@
 import type { Config } from "jest";
 
 const config: Config = {
-  preset: "ts-jest",
+  preset: "ts-jest/presets/default-esm",
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
   moduleNameMapper: {
-    "^react(.*)$": "<rootDir>/node_modules/react$1",
-    "^@testing-library/react$": "<rootDir>/node_modules/@testing-library/react",
-    "^@testing-library/jest-dom$":
-      "<rootDir>/node_modules/@testing-library/jest-dom",
-    "^@testing-library/user-event$":
-      "<rootDir>/node_modules/@testing-library/user-event",
-    "^react-router-dom$": "<rootDir>/node_modules/react-router-dom",
     "^.+\\.(css|scss)$": "identity-obj-proxy",
-    "^.+\\.(webmanifest|svg|png|jpg|jpeg|gif|ico|bmp|json)$":
+    "^.+\\.(webmanifest|svg|png|jpg|jpeg|gif|ico|bmp)$":
       "<rootDir>/__mocks__/fileMock.js",
   },
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(ts|tsx)$": [
+      "ts-jest",
+      {
+        tsconfig: "./tsconfig.app.json",
+        useESM: true,
+      },
+    ],
   },
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
   testMatch: ["**/?(*.)+(test).[jt]s?(x)"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 };

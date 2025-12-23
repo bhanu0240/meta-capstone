@@ -16,7 +16,7 @@ describe("Booking page", () => {
 
     expect(timeOptions.length).toBeGreaterThanOrEqual(1);
     timeOptions.forEach((timeOption) =>
-      expect(timeOption.value).toMatch(timeFormat)
+      expect((timeOption as HTMLInputElement).value).toMatch(timeFormat)
     );
   });
 
@@ -40,10 +40,10 @@ describe("Booking page", () => {
 
     expect(dateInput).toHaveValue(bookingDate);
     initialTimeOptions.forEach((timeOption) =>
-      expect(timeOption.value).toMatch(timeFormat)
+      expect((timeOption as HTMLInputElement).value).toMatch(timeFormat)
     );
     updatedTimeOptions.forEach((timeOption) =>
-      expect(timeOption.value).toMatch(timeFormat)
+      expect((timeOption as HTMLInputElement).value).toMatch(timeFormat)
     );
     expect(initialTimeOptions.length).not.toBe(updatedTimeOptions.length);
   });
