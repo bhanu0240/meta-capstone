@@ -47,6 +47,4 @@ describe("Booking page", () => {
     );
     expect(initialTimeOptions.length).not.toBe(updatedTimeOptions.length);
   });
-
-  //test('', () => {});
 });
